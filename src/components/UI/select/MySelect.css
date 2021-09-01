@@ -1,0 +1,11 @@
+.my_select{
+    display: flex;
+}
+
+.my_select__title{
+    margin-right: 5px;
+}
+
+.my_select__body{
+    min-width: 100px;
+}

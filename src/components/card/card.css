@@ -1,0 +1,40 @@
+.card{
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-top: 15px;
+
+    display: grid;
+    grid-template-columns: 200px 1fr 100px;
+}
+
+.card__image{
+    margin: 5px;
+    height: 200px;
+    background-color: hotpink;
+   
+}
+
+.card__image img{
+    height: 100%;
+}
+
+.card__desc{
+    padding: 5px 10px;
+}
+
+.card__title{
+    font-size: 25px;
+}
+
+
+.card__book_descr{
+    margin-top: 20px;
+
+}
+
+
+.card__buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

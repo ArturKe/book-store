@@ -1,0 +1,24 @@
+.header{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header__logo{
+    min-width: 200px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    font-weight: 800;
+}
+
+.header__register{
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 20px;
+
+}
