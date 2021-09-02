@@ -1,8 +1,17 @@
 .navbar{
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: rgb(233, 233, 233);
+    position: relative;
+    background-color: rgb(228, 228, 228);
+    height: 35px;
+}
+.navbar__burger{
+    background-color: rgb(199, 199, 199);
+    height: 35px;
+    width: 35px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    display: none;
 }
 
 .navbar__item{
@@ -12,6 +21,8 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: rgb(199, 199, 199);
+    
 }
 
 .navbar__item a{
@@ -20,4 +31,47 @@
 
 .navbar__item:hover{
     background-color: rgb(211, 210, 210);
+
+}
+
+.navbar__wraper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: rgb(233, 233, 233);
+    flex-direction: row;
+}
+
+.navbar__wraper.active{
+   left: 0;
+   transition: all 0.3s;
+}
+
+
+
+@media (max-width: 450px){
+    .navbar__wraper{
+       flex-direction: column;
+       position: absolute;
+       width: 100%;
+       top: 35px;
+       left: -110%;
+       transition: all 0.3s;
+       
+       
+    }
+
+    
+
+    .navbar__item {
+        width: 100%;
+        border-bottom: 2px rgb(228, 226, 226) solid;
+        font-size: 20px;
+        padding: 10px
+    }
+
+    .navbar__burger{
+        display: grid;
+    }
+
 }

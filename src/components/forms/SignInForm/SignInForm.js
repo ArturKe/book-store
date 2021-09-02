@@ -43,8 +43,8 @@ function SignInForm (props){
  
             </form>
 
-            <Footer />
         </div>
+        
     )
 }
 

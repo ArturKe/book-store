@@ -2,11 +2,9 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .header__logo{
-    min-width: 200px;
     font-size: 30px;
     display: flex;
     align-items: center;

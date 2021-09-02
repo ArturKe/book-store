@@ -8,6 +8,7 @@ import About from './components/about/about';
 import { useState, useEffect } from 'react';
 import SignInForm from './components/forms/SignInForm/SignInForm'
 import AddBook from './components/forms/addBook/AddBook';
+import Footer from './components/footer/Footer';
 
 
 function App() {
@@ -69,13 +70,16 @@ useEffect(()=>{
   return (
    
     <div className="App">
-     
       <BrowserRouter>
+
+      <header>
         <Header />
         <Navbar />
+      </header>
 
+      <main>
         <Switch>
-       
+        
           <Route path="/books">
                 <CardsList books={books} title={"List of Books"}/>  
           </Route>
@@ -95,6 +99,14 @@ useEffect(()=>{
           <Redirect to="/books" />
 
         </Switch>
+
+      </main>
+
+      <footer>
+        <Footer />
+
+      </footer>
+     
         
       </BrowserRouter>
      

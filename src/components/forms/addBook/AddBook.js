@@ -57,8 +57,6 @@ function AddBook (props){
 
         </form>
 
-        <Footer/>
-
     </div>
 
     )

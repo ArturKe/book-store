@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './card.css';
 import MyButton from '../UI/button/MyButton';
 
 
 function Card ({book, number}){
+
+    const[desc, setDdesc] = useState(book.shortDescription)
+
+    const perem = book.shortDescription
+    console.log(desc)
+
     return(
         <div className="card">
             <div className="card__image">
@@ -13,7 +19,7 @@ function Card ({book, number}){
                 <div className="card__title">{book.title}</div>
                 <div className="card__isbn">ISBN:_{book.isbn}</div>
                 <div className="card__autor">Author: {book.authors}</div>
-                <div className="card__book_descr">{book.shortDescription}.</div>
+                <div className="card__book_descr">{perem}.</div>
             </div>
             <div className="card__buttons">
                 <MyButton>Add +</MyButton>
