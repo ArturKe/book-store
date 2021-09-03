@@ -4,15 +4,11 @@
     background-color: rgb(228, 228, 228);
     height: 35px;
 }
+
 .navbar__burger{
-    background-color: rgb(199, 199, 199);
-    height: 35px;
-    width: 35px;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
     display: none;
 }
+
 
 .navbar__item{
     width: 90px;
@@ -50,11 +46,27 @@
 
 
 @media (max-width: 450px){
+
+    .navbar{
+        height: 45px;
+    }
+
+    .navbar__burger{
+        background-color: rgb(199, 199, 199);
+        height: 45px;
+        width: 45px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        display: none;
+    }
+
+
     .navbar__wraper{
        flex-direction: column;
        position: absolute;
        width: 100%;
-       top: 35px;
+       top: 45px;
        left: -110%;
        transition: all 0.3s;
        
