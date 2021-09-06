@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './card.css';
 import MyButton from '../UI/button/MyButton';
+import { storeContext } from '../../App';
 
 
 function Card ({book, number}){
 
     const[desc, setDdesc] = useState(book.shortDescription)
+    const {basket, update} = useContext(storeContext)
+    
 
     const perem = book.shortDescription
     console.log(desc)
@@ -22,7 +25,7 @@ function Card ({book, number}){
                 <div className="card__book_descr">{perem}.</div>
             </div>
             <div className="card__buttons">
-                <MyButton>Add +</MyButton>
+                <MyButton onClick={()=>{update(basket+1)}} >Add +</MyButton>
             </div>
             
         </div>

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './SignInForm.css'
 import MyButton from '../../UI/button/MyButton';
 import MyInput from '../../UI/input/MyInput';
-import Footer from '../../footer/Footer';
 
 
 function SignInForm (props){
@@ -25,6 +24,8 @@ function SignInForm (props){
                 <h2>Sign in</h2>
                 <h2>{signData.login}</h2>
                 <h2>{signData.password}</h2>
+                <hr/>
+                <br/>
             
                 <MyInput 
                     value={signData.login}

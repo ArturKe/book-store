@@ -5,10 +5,13 @@ import Navbar from './components/navbar/navbar';
 import Header from './components/header/header';
 import CardsList from './components/cardsList/cardsList';
 import About from './components/about/about';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import SignInForm from './components/forms/SignInForm/SignInForm'
 import AddBook from './components/forms/addBook/AddBook';
 import Footer from './components/footer/Footer';
+import Basket from './pages/basket/basket';
+
+export const storeContext = React.createContext()
 
 
 function App() {
@@ -17,6 +20,9 @@ function App() {
     {id: 2, title:"Mega Book", body:'C This is book about SOme Things'},
     {id: 13, title:"Giga Book", body:'A This is book about SOme Things'}
   ])
+
+  
+  const[basket,setBasket] = useState(0)
 
   async function reciveData(){
     const url = 'https://library-crm-default-rtdb.europe-west1.firebasedatabase.app/books.json' 
@@ -70,45 +76,57 @@ useEffect(()=>{
   return (
    
     <div className="App">
-      <BrowserRouter>
 
-      <header>
-        <Header />
-        <Navbar />
-      </header>
 
-      <main>
-        <Switch>
-        
-          <Route path="/books">
-                <CardsList books={books} title={"List of Books"}/>  
-          </Route>
+      <storeContext.Provider value={{
+        basket: basket,
+        update: setBasket
 
-          <Route path="/about">
-            <About />
-          </Route>
+      }}>
+        <BrowserRouter>
 
-          <Route path="/signin">
-            <SignInForm />
-          </Route>
+        <header>
+          <Header />
+          <Navbar />
+        </header>
 
-          <Route path="/addbook">
-            <AddBook/>
-          </Route>
+        <main>
+          <Switch>
+          
+            <Route path="/books">
+                  <CardsList books={books} title={"List of Books"}/>  
+            </Route>
 
-          <Redirect to="/books" />
+            <Route path="/about">
+              <About />
+            </Route>
 
-        </Switch>
+            <Route path="/signin">
+              <SignInForm />
+            </Route>
 
-      </main>
+            <Route path="/addbook">
+              <AddBook/>
+            </Route>
 
-      <footer>
-        <Footer />
+            <Route path="/basket">
+              <Basket/>
+            </Route>
 
-      </footer>
-     
-        
-      </BrowserRouter>
+            <Redirect to="/books" />
+
+          </Switch>
+
+        </main>
+
+        <footer>
+          <Footer />
+
+        </footer>
+      
+          
+        </BrowserRouter>
+      </storeContext.Provider>
      
     </div>
 
